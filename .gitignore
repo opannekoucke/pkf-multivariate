@@ -1,0 +1,14 @@
+# Jupyter
+**/.ipynb_checkpoints
+**/*.pyc
+
+# sorties Mocage
+**/*.nc
+
+grs_data/
+Notebooks/plots/
+Notebooks/adv.py
+Notebooks/pkf_adv.py
+
+.Rhistory
+
