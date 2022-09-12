@@ -13,7 +13,7 @@ This repository provides the numerical codes used for the article
 
 <div>
 <div style="float:left">
-This work has been supported by the French INSU-LEFE, grant KAPA 
+This work has been supported by the French INSU-LEFE, grant MPKF (multivariate PKF) 
 </div>
 <div>
 <img src="./figures/logo_lefe.png" alt="logo lefe" width="50"/>  
