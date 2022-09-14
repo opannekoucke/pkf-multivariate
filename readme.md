@@ -7,7 +7,7 @@ This contribution explores a new approach to forecast multivariate covariances f
 
 This repository provides the numerical codes used for the article
 
-***A. Perrot, O. Pannekoucke, and V. Guidard, “Toward a multivariate formulation of the PKF dynamics : application to a simplified chemical transport model”.***
+***A. Perrot, O. Pannekoucke, and V. Guidard, “Toward a multivariate formulation of the PKF dynamics : application to a simplified chemical transport model”. egusphere-2022-928***
 
 
 
