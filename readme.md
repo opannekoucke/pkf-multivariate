@@ -76,30 +76,30 @@ for the EnKF and does not require the storage of a huge covariance matrix.
 
 
 
-[__Notebook 1:__](notebooks/1.%20Introduction%20to%20ensemble%20methods%20(EnKF)%20and%20Parametric%20Kalman%20Filter%20(PKF).ipynb) Introduction to assimilation methods for a simplified chemical model
+[__Notebook 1:__](./notebooks/1.%20Introduction%20to%20ensemble%20methods%20(EnKF)%20and%20Parametric%20Kalman%20Filter%20(PKF).ipynb) Introduction to assimilation methods for a simplified chemical model
 ---------------------
 
 Notebook 1 first introduces a simplified chemical model based on the Lotka-Volterra's equations, which leads to periodical behaviours of the concentrations:
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/lotkavolterraorbits.png" width="500" />
+  <img src="./figures/lotkavolterraorbits.png" width="500" />
 </p>
 
 Then, an example introduces the use of assimilation methods to estimate the state of a dynamical system by performing 4 cycles of data assimilation with an ensemble Kalman filter of size 400.
 
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/introduction_data_assimilation_methods.png" width="500" />
+  <img src="./figures/introduction_data_assimilation_methods.png" width="500" />
 </p>
 
 
 Finally, the PKF is formulated for the simplified chemical model and its performances at forecasting the state system and its error covariance matrix are compared with the results of a large EnKF. 
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/forecast_lv_0d_pkf_enkf.png" width="500" />
+  <img src="./figures/forecast_lv_0d_pkf_enkf.png" width="500" />
 </p>
 
 This last example shows that leveraring on the problem equations can significantly reduce the numerical cost and offer a better understanding of the uncertainty dynamics.
 
 
-[__Notebook 2:__](https://github.com/antoineperrot/multivariate-PKF/blob/main/notebooks/2.%20Univariate%20advection%20problem.ipynb) The PKF for a univariate advection problem
+[__Notebook 2:__](./notebooks/2.%20Univariate%20advection%20problem.ipynb) The PKF for a univariate advection problem
 ---------------------
 
 Before moving on to the simplified CTM and to give the reader a good understanding of the PKF applied in spatial contexts, attention is put on an univariate advection problem in 1D. The dynamics of the PKF are computed using the specifically designed Python package SymPKF ([Pannekoucke et al. 2021][Pannekoucke2021GMD], https://github.com/opannekoucke/sympkf).
@@ -107,7 +107,7 @@ Before moving on to the simplified CTM and to give the reader a good understandi
 In the following, several forecasts of the state system with its error statistics are done and the results of the PKF and EnKF are compared. Two different resolutions (*low* and *high*, 241 and 743 grid points) of the spatial grid are used in the EnKF case to put in evidence the sensibility of the error statistics produced by the EnKF to numerical model error, but also to demonstrate the robustness of the PKF method which, by nature, is less subject to this numerical model error.
 
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/advection_diagnosis_ensemble_highres_vs_pkf_lowres.png" width="900"/>
+  <img src="./figures/advection_diagnosis_ensemble_highres_vs_pkf_lowres.png" width="900"/>
 </p>
 
 
@@ -115,36 +115,36 @@ Eventually, the estimations of the correlation function at $x=0.5$ and times $t=
 
 
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/advection_autocorrelation_functions_pkf_lowres_enkf_highres.png" width="700"/>
+  <img src="./figures/advection_autocorrelation_functions_pkf_lowres_enkf_highres.png" width="700"/>
 </p>
 
-[__Notebook 3:__](https://github.com/antoineperrot/multivariate-PKF/blob/main/notebooks/3.%20Multivariate%20formulation%20of%20the%20PKF%20for%20a%20simplified%20CTM.ipynb) A multivariate formulation of the PKF : application to a simplified CTM
+[__Notebook 3:__](./notebooks/3.%20Multivariate%20formulation%20of%20the%20PKF%20for%20a%20simplified%20CTM.ipynb) A multivariate formulation of the PKF : application to a simplified CTM
 ---------------------
 This notebook first presents the simplified CTM, that is the combination the simplified chemical model given by the Lotka-Volterra's equation with a conservative equation for the two chemical species.
 Then, a proxy for estimating the cross-correlation is proposed. Several numerical experiments are performed using a large EnKF so to evaluate (qualitatively and quantitatively) its ability to reproduces the empirical cross-correlations given by the EnKF, in different situations.
 
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/Nx723/proxy_estimations_cc_homogeneous_Nx723_lh0.06224066390041494.png" width="700"/>
+  <img src="./figures/Nx723/proxy_estimations_cc_homogeneous_Nx723_lh0.06224066390041494.png" width="700"/>
 </p>
 
 
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/Nx723/time_evolution_relative_error_modelled_CCmat_heterogeneous_case_Nx723_homogeneous_and_heterogeneous.png" width="450"/>
+  <img src="./figures/Nx723/time_evolution_relative_error_modelled_CCmat_heterogeneous_case_Nx723_homogeneous_and_heterogeneous.png" width="450"/>
 </p>
 
 The [SymPKF package](https://github.com/opannekoucke/sympkf) is then used to deduce the PKF dynamics for the simplified CTM. As it appears that the system of equations is not closed (open terms in the anisotropy dynamics), an exhaustive study on the nature and magnitude of the open terms is conducted in the following notebook.
 
-[__Notebook 4:__](https://github.com/antoineperrot/multivariate-PKF/blob/main/notebooks/4.%20Studying%20the%20anisotropy%20dynamics%20for%20the%20simplified%20chemical%20model.ipynb) Detailed study on the impact of the chemistry alone on the anisotropies
+[__Notebook 4:__](./notebooks/4.%20Studying%20the%20anisotropy%20dynamics%20for%20the%20simplified%20chemical%20model.ipynb) Detailed study on the impact of the chemistry alone on the anisotropies
 ---------------------
 As the open terms in the anisotropy dynamics are due to the non-linear coupling term $A \times B$ in the chemical model, we would like to better understand how the chemistry influences the length-scales (or anisotropy) dynamics. To do so, a similar and linear chemical model based on the equations of the Harmonic Oscillator (HO) is introduced so to derive explicit solutions for the temporal evolution of the error statistics under spatially homogeneous hypothesis. Numerical forecasts of the EnKF are carried out, in which the transport process is turned off (windfield is set to zero) to compare the dynamics of the error statistics for Lotka-Volterra with the explicit solutions for the HO.
 
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/Nx723/time_series_homogeneous_lh06224066390041494.png" width="700"/>
+  <img src="./figures/Nx723/time_series_homogeneous_lh06224066390041494.png" width="700"/>
 </p>
 
 
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/Nx723/time_series_heterogeneous_lhA06224066390041494_lhB0912863070539419.png" width="700"/>
+  <img src="./figures/Nx723/time_series_heterogeneous_lhA06224066390041494_lhB0912863070539419.png" width="700"/>
 </p>
 
 Both empirical measurements with the EnKF and the explicit analytical solutions for HO indicate that identical (resp. different) length-scales for the two chemical species lead to the absence of (resp. the presence of oscillatory) dynamics for the anisotropy.
@@ -152,44 +152,44 @@ Both empirical measurements with the EnKF and the explicit analytical solutions 
 The following numerical experiment aims to quantify the role of the two processes at play (conservative transport and chemistry) in the complete dynamics of the anisotropy. Using a large EnKF which gives access to the open terms, and relying on the ouputs of the SymPKF for the simplified CTM, an *a posteriori* estimations of the terms present the anisotropy dynamics allows to compute the magnitude of the contribution for the different processes (or term).
 
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/Nx723/quantification_homogeneous_Nx723_lh06224066390041494.png" width="700"/>
+  <img src="./figures/Nx723/quantification_homogeneous_Nx723_lh06224066390041494.png" width="700"/>
 </p>
 
 
 This last experiment let appears that the transport is the most dominant process. Thereafter, we choose to neglect all the chemistry-related terms (including the closed ones) in the anisotropy dynamics so to close the PKF system. 
 
 
-[__Notebook 5:__](https://github.com/antoineperrot/multivariate-PKF/blob/main/notebooks/5.%20Multivariate%20PKF%20-%20Forecast%20and%205%20assimilation%20cycles.ipynb) Forecast and complete data assimilation cycles experiments
+[__Notebook 5:__](./notebooks/5.%20Multivariate%20PKF%20-%20Forecast%20and%205%20assimilation%20cycles.ipynb) Forecast and complete data assimilation cycles experiments
 ---------------------
 The PKF system being closed, this notebooks presents several numerical experiments to assess the PKF in this multivariate context. Again, a large EnKF serves as a reference. 
 Two experiments, forecast and 5 complete assimilation cycles, are performed under two different initial conditions for the length-scales : equal $l^A_0=l^B_0$ and different $l^A_0\neq l^B_0$.
 
-__forecast:__ [(video here)](https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/video_plots/forecast_Nx723.mp4)
+__forecast:__ [(video here)](./figures/video_plots/forecast_Nx723.mp4)
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/Nx723/forecast_Nx723.png" width="800"/>
+  <img src="./figures/Nx723/forecast_Nx723.png" width="800"/>
 </p>
 
-__5 data assimilation cycles:__ [(video here)](https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/video_plots/data_assimilation_experiment_Nx723.mp4)
+__5 data assimilation cycles:__ [(video here)](./figures/video_plots/data_assimilation_experiment_Nx723.mp4)
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/Nx723/data_assimilation_exp_Nx723_with_NR.png" width="800"/>
+  <img src="./figures/Nx723/data_assimilation_exp_Nx723_with_NR.png" width="800"/>
 </p>
 
 
 The PKF produces accurate data assimilation cycles at a fraction of the EnKF numerical cost.
 
-[__Notebook 6:__](https://github.com/antoineperrot/multivariate-PKF/blob/main/notebooks/6.%20Advection%20GRS.ipynb) Further testing of the PKF with the GRS chemical model
+[__Notebook 6:__](./notebooks/6.%20Advection%20GRS.ipynb) Further testing of the PKF with the GRS chemical model
 ---------------------
 This last notebook put to the test the PKF in a more complex context with the GRS chemical model (Azzi et al, 1992; Haussaire et Bocquet, 2016) which consists of 6 chemical species, multiple non-linear coupling, emission inventories, ground-deposits and time-varying chemical rates. Again, this chemical model is coupled with a conservative transport process.
 
 A numerical forecast is conducted for a period of 72h, at a low-resolution (241 grid points).
 
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/grs_settings.png" width="800"/>
+  <img src="./figures/grs_settings.png" width="800"/>
 </p>
 
-__forecast over 72h:__ [(video here)](https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/video_plots/GRS_forecast.mp4)
+__forecast over 72h:__ [(video here)](./figures/video_plots/GRS_forecast.mp4)
 <p align="center">
-  <img src="https://github.com/antoineperrot/multivariate-PKF/blob/main/figures/grs_forecast_vertical.png" width="800"/>
+  <img src="./figures/grs_forecast_vertical.png" width="800"/>
 </p>
 
 The PKF outputs are of high quality regarding the means and the standard-deviation fields. Slight differences can be observed between PKF and EnKF on the length-scales but are also due to numerical model error in the EnKF diagnosis, as notebook 2 has shown. The last columns show a key result : the good estimations by the proxy of the cross-correlation functions.
@@ -197,12 +197,12 @@ The PKF outputs are of high quality regarding the means and the standard-deviati
 
 ### Annexe notebooks :
 
-[__alternative_pkf_formulation_experiments.ipynb:__](https://github.com/antoineperrot/multivariate-PKF/blob/main/notebooks/annexe_notebooks/alternative_pkf_formulation_experiments.ipynb) in this notebook, an alternative formulation of the PKF is test, the open term $ \overline{\partial_x \tilde{\varepsilon}_A \partial_x \tilde{\varepsilon}_B}$ is estimated by $\frac{V^{AB}_x}{\sigma_x^A \sigma_x^B} \frac{2}{s^A_x+s^B_x}$ (see section 3.3 of the article).
+[__alternative_pkf_formulation_experiments.ipynb:__](./notebooks/annexe_notebooks/alternative_pkf_formulation_experiments.ipynb) in this notebook, an alternative formulation of the PKF is test, the open term $ \overline{\partial_x \tilde{\varepsilon}_A \partial_x \tilde{\varepsilon}_B}$ is estimated by $\frac{V^{AB}_x}{\sigma_x^A \sigma_x^B} \frac{2}{s^A_x+s^B_x}$ (see section 3.3 of the article).
 
-[__computing_grs_dynamics_with_sympkf.ipynb:__](https://github.com/antoineperrot/multivariate-PKF/blob/main/notebooks/annexe_notebooks/computing_grs_dynamics_with_sympkf.ipynb) in this notebook, we use the SymPKF package to compute the PKF dynamics for the GRS chemical model.
+[__computing_grs_dynamics_with_sympkf.ipynb:__](./notebooks/annexe_notebooks/computing_grs_dynamics_with_sympkf.ipynb) in this notebook, we use the SymPKF package to compute the PKF dynamics for the GRS chemical model.
 
 
-[__modified_equation_for_conservative_transport_equation.ipynb:__](https://github.com/antoineperrot/multivariate-PKF/blob/main/notebooks/annexe_notebooks/modified_equation_for_conservative_transport_equation.ipynb) in this notebook, we compute the modified equation induced by the use of euler temporal explicit scheme and centered finite differences for a conservative transport equation.
+[__modified_equation_for_conservative_transport_equation.ipynb:__](./notebooks/annexe_notebooks/modified_equation_for_conservative_transport_equation.ipynb) in this notebook, we compute the modified equation induced by the use of euler temporal explicit scheme and centered finite differences for a conservative transport equation.
 
 
 
